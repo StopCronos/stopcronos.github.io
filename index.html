@@ -5,6 +5,12 @@
     <script src="https://aframe.io"></script>
     <script src="https://jsdelivr.net"></script>
   </head>
+  <script>
+  document.querySelectorAll('[mindar-image-target]').forEach((el, index) => {
+    el.addEventListener("targetFound", () => alert("¡Rostro detectado! Índice: " + index));
+  });
+</script>
+
   <body style="margin: 0; overflow: hidden;">
     <!-- maxTrack: 2 permite detectar hasta 2 fotos al mismo tiempo en cámara -->
     <a-scene
