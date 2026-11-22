@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io"></script>
+    <script src="https://jsdelivr.net"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <!-- maxTrack: 2 permite detectar hasta 2 fotos al mismo tiempo en cámara -->
+    <a-scene
+      mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 2;"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <!-- Imágenes que aparecerán encima de cada rostro -->
+        <img id="img-rostro-0" src="./imagen1.png" />
+        <img id="img-rostro-1" src="./imagen2.png" />
+        <img id="img-rostro-2" src="./imagen3.png" />
+      </a-assets>
 
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- Foto de rostro 1 (índice 0) -->
+      
+        <a-plane src="#img-rostro-0" position="0 0 0" height="1" width="1"></a-plane>
+      
+
+      <!-- Foto de rostro 2 (índice 1) -->
+      
+        <a-plane src="#img-rostro-1" position="0 0 0" height="1" width="1"></a-plane>
+      
+
+      <!-- Foto de rostro 3 (índice 2) -->
+      
+        <a-plane src="#img-rostro-2" position="0 0 0" height="1" width="1"></a-plane>
+      
+    </a-scene>
+  </body>
+</html>
